@@ -48,6 +48,11 @@ nav {
   border-radius: 0.5rem;
 }
 
+.cards {
+  display: grid;
+  justify-items: center;
+}
+
 .card-buy {
   display: flex;
 }
@@ -69,4 +74,23 @@ nav {
 
 .header:hover {
   cursor: pointer;
+}
+
+/* Y */
+p {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1fr));
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 20px;
+}
+
+.div.card {
+  display: grid;
+  justify-items: center;
 }
