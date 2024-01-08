@@ -1,0 +1,20 @@
+.card-container {
+  width: 1200px;
+  background-color: red;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  width: 320px;
+  height: 19rem;
+}
+
+img {
+  width: 320px;
+  height: 100px;
+}
