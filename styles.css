@@ -15,6 +15,12 @@ h1 {
   display: inline;
 }
 
+.btn,
+#checkout {
+  text-decoration: none;
+  color: white;
+}
+
 nav {
   height: 5rem;
   display: flex;
@@ -23,27 +29,33 @@ nav {
 }
 
 .btn-container {
-  width: 100%;
-  display: flex;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
-  justify-content: center;
 }
+
+#checkout {
+  justify-self: right;
+}
+
+/* CARDS */
 
 .card-container {
   width: 1200px;
-  height: 20rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
   margin: 0 auto;
+  margin-top: 50px;
 }
 
 .card {
   background-color: white;
   width: 320px;
-  height: 19rem;
+  height: 25rem;
   border: 2px solid #333;
   border-radius: 0.5rem;
 }
@@ -55,21 +67,38 @@ nav {
 
 .card-buy {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.card-buy p {
+  display: flex;
+  font-size: 1.6rem;
+}
+.card-buy p span {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.card-add {
+  width: ;
+  display: flex;
+  flex-direction: row;
 }
 
 .card-img {
-  width: 150px;
-  height: 150px;
+  height: 180px;
+  max-width: 315px;
 }
 
 .header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   font-size: 16px;
   text-align: center;
   background-color: black;
   color: white;
-  margin-top: 20px;
 }
 
 .header:hover {
@@ -93,4 +122,8 @@ p {
 .div.card {
   display: grid;
   justify-items: center;
+}
+
+.btn:first-child {
+  font-size: 30px;
 }
