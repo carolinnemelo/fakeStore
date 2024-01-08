@@ -12,28 +12,34 @@ function getData() {
       editJson(data);
       displayButtons(data);
       console.log(data);
+      let productData = {};
     })
     .catch(console.warn);
 }
 
-function editJson(data) {
+function editJson(data, index) {
   products.innerHTML = data
     .map(({ image, title, description, price, category }) => {
       return `
-    <div class="card">
-    <div class="cards">
-      <img class="card-img" src="${image}" alt="" />
-      <h2 class="card-title">${title}</h2>
-      <p>${description}</p>
-      <div class="card-buy">
-      <p>${price}<span>Kr</span></p>
-      <button class="kop">köp</button>
-      </div>
-    </div></div>`;
+        <div class="card" data-category="${category}">
+          <div class="card-top">
+            <div class="cards">
+              <img class="card-img" src="${image}" alt="" />
+              <h2 class="card-title">${title}</h2>
+              <p>${description}</p>
+            </div>
+            <div class="card-buy">
+              <p><span>$</span> ${price}</p>
+              <div class="card-add">
+                <p id="minus">- 0 +</p>
+                <button class="buy" onclick="buyThis(${index})">Köp!</button>
+              </div>
+            </div>
+          </div>
+        </div>`;
     })
     .join("");
-    makeKopButtonsList(data);
-
+  makeKopButtonsList(data);
 }
 
 function displayButtons(data) {
