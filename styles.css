@@ -1,8 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: #222;
+  color: white;
+  font-family: sans-serif;
+  display: inline;
+}
+
 .card-container {
   width: 1200px;
   background-color: red;
   height: 20rem;
   display: flex;
+
   align-items: center;
   gap: 4rem;
   margin: 0 auto;
@@ -17,4 +30,18 @@
 img {
   width: 320px;
   height: 100px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  font-size: 16px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+}
+
+.header:hover {
+  cursor: pointer;
 }
