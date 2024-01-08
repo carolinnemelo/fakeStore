@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  width: 100vw;
+}
+
 h1 {
   background-color: #222;
   color: white;
@@ -11,11 +15,25 @@ h1 {
   display: inline;
 }
 
+nav {
+  height: 5rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-container {
   width: 1200px;
-  background-color: red;
   height: 20rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
   align-items: center;
   gap: 4rem;
@@ -26,6 +44,8 @@ h1 {
   background-color: white;
   width: 320px;
   height: 19rem;
+  border: 2px solid #333;
+  border-radius: 0.5rem;
 }
 
 .card-buy {
