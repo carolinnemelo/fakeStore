@@ -10,14 +10,17 @@ function getData() {
     .then((data) => {
       console.log(data);
       products.innerHTML = data
-        .map(({ image, title, description }) => {
+        .map(({ image, title, description, price }) => {
           return `
           <div class="card">
           <div class="cards">
-            <img src="${image}" alt="" />
-            <h2>${title}"</h2>
+            <img class="card-img" src="${image}" alt="" />
+            <h2 class="card-title">${title}"</h2>
             <p>${description}</p>
+            <div class="card-buy">
+            <p>${price}<span>Kr</span></p>
             <button>köp</button>
+            </div>
           </div></div>`;
         })
         .join("");

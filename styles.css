@@ -27,9 +27,27 @@ h1 {
   height: 19rem;
 }
 
-img {
-  width: 320px;
-  height: 100px;
+.card-buy {
+  display: flex;
+}
+
+.card-img {
+  width: 150px;
+  height: 150px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  font-size: 16px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+}
+
+.header:hover {
+  cursor: pointer;
 }
 
 .header {
