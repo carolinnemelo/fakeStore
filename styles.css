@@ -1,3 +1,11 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* CARD FOR PRODUCTS */
+
 .card-container {
   width: 1200px;
   background-color: red;
@@ -14,7 +22,11 @@
   height: 19rem;
 }
 
-img {
-  width: 320px;
-  height: 100px;
+.card-buy {
+  display: flex;
+}
+
+.card-img {
+  width: 150px;
+  height: 150px;
 }
