@@ -107,16 +107,25 @@ nav {
 
 /* Y */
 p {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(1fr));
-  grid-template-rows: auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3; /* Antal rader att visa innan avkortning */
+  line-clamp: 2;
+  max-height: 3.6em; /* (Font size) x (line clamps) */
 }
 
 .card-title {
-  font-size: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2; /* Antal rader att visa innan avkortning */
+  line-clamp: 2;
+  max-height: 3.6em; /* (Font size) x (line clamps) */
+  display: block;
+  margin: 10px;
 }
 
 .div.card {
