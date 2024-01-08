@@ -23,7 +23,7 @@ function editJson(data) {
     <div class="card">
     <div class="cards">
       <img class="card-img" src="${image}" alt="" />
-      <h2 class="card-title">${title}"</h2>
+      <h2 class="card-title">${title}</h2>
       <p>${description}</p>
       <div class="card-buy">
       <p>${price}<span>Kr</span></p>
@@ -32,7 +32,7 @@ function editJson(data) {
     </div></div>`;
     })
     .join("");
-    makeKopButtonsList();
+    makeKopButtonsList(data);
 
 }
 
