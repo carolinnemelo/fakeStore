@@ -28,3 +28,7 @@ async function createProductsCards() {
 
     });
 }
+
+function addToBag {
+    document.querySelector('#addToBag') = 
+}
