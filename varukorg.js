@@ -5,7 +5,7 @@ async function makeKopButtonsList(data) {
     kopButtons.forEach(button => {
         button.addEventListener('click', () => {
             const cardTitle = button.closest('.cards').querySelector('.card-title').textContent;
-            console.log("Product title:", cardTitle);
+            // console.log("Product title:", cardTitle);
             
             addProductToVarukorg(data, cardTitle);
 
@@ -21,6 +21,10 @@ function addProductToVarukorg(data, cardTitle) {
     } else {
         return "Not found";
     }
-    console.log(varukorg)
+    // console.log(varukorg);
 }
 
+document.addEventListener('click', () => {
+    const varukorgButton = document.querySelector('#checkout');
+    
+})
