@@ -26,5 +26,6 @@ function addProductToVarukorg(data, cardTitle) {
 
 document.addEventListener('click', () => {
     const varukorgButton = document.querySelector('#checkout');
-    
+    const asideVarukorg = document.querySelector('#asideVarukorg')
+    asideVarukorg.style.display = "flex";
 })

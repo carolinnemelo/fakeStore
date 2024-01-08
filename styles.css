@@ -136,3 +136,12 @@ p {
 .btn:first-child {
   font-size: 30px;
 }
+
+
+#asideVarukorg {
+  display: none;
+  height: 100vh;
+  background-color: black;
+  width: 25rem;
+  z-index: 10;
+}
