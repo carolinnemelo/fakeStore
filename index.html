@@ -23,11 +23,9 @@
         >
       </div>
       <div class="checkout-box">
-        <a id="checkout">Varukorg</a>
+        <a id="checkout" href="#pay-now">Varukorg</a>
       </div>
-      <div id="asideVarukorg">
-
-      </div>
+      <div class="asideVarukorg"></div>
     </nav>
     <main>
       <section class="card-container" id="products">
@@ -49,19 +47,24 @@
         </div> -->
       </section>
     </main>
-    <section>
+    <section class="section-price" id="pay-now">
+      <div class="checkout-header">
       <h2>Varukorg</h2>
-      <div class="price-container">
-        <div class="products-cart">
+    
+      <div class="total-container">
+        <p>Totalt summan: <span class="dollar">$</span><span class="totalprice">0</span></p>
+      </div>
+      <button id="payNow">BETALA</button>
+    </div>
+      <div class="price-container card-container">
+       <!--  <div class="products-cart">
           <h3 id="bought-title">Namnet på produkten</h3>
           <img class="" src="img.png" alt="" width="100px" />
           <h4 id="bought-number">1st</h4>
           <h4 id="price">$20</h4>
         </div>
-      </div>
-      <div class="total-container">
-        <p>Totalt summan: $20</p>
-      </div>
+      </div> -->
+    
     </section>
   </body>
 </html>

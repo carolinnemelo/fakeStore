@@ -6,6 +6,7 @@
 
 body {
   width: 100vw;
+  background-color: #f3f3f3;
 }
 
 h1 {
@@ -15,10 +16,17 @@ h1 {
   display: inline;
 }
 
-.btn,
-#checkout {
+.btn {
   text-decoration: none;
   color: white;
+}
+
+#checkout {
+  padding: 0.5rem 0.3rem;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  border-radius: 4px;
 }
 
 nav {
@@ -33,6 +41,7 @@ nav {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
+  text-transform: capitalize;
 }
 
 #checkout {
@@ -50,6 +59,7 @@ nav {
   gap: 2rem;
   margin: 0 auto;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .card {
@@ -58,11 +68,13 @@ nav {
   height: 25rem;
   border: 2px solid #333;
   border-radius: 0.5rem;
+  box-shadow: 0 0.3rem 0.7rem rgba(black, 0.55);
 }
 
 .cards {
   display: grid;
   justify-items: center;
+  height: 21rem;
 }
 
 .card-buy {
@@ -70,13 +82,40 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 .card-buy p {
   display: flex;
   font-size: 1.6rem;
+  align-items: center;
+  margin-right: 10px;
 }
+
+.buy,
+#payNow {
+  width: 70px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#payNow {
+  margin-top: 5px;
+  width: 100px;
+  height: 30px;
+}
+
+#payNow:hover,
+.buy:hover {
+  background-color: rgb(6, 6, 158);
+}
+
+.buy:active {
+  transform: translateY(1px);
+}
+
 .card-buy p span {
   font-weight: 600;
   margin-right: 0.5rem;
@@ -84,7 +123,6 @@ nav {
 }
 
 .card-add {
-  width: ;
   display: flex;
   flex-direction: row;
 }
@@ -137,11 +175,93 @@ p {
   font-size: 30px;
 }
 
-
-#asideVarukorg {
+/* #asideVarukorg {
   display: none;
   height: 100vh;
   background-color: black;
   width: 25rem;
   z-index: 10;
+} */
+
+/* Tillfällig varukorg */
+
+.section-price {
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(128, 128, 128, 0.478);
 }
+
+.products-cart {
+  width: 12rem;
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.price-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartheader {
+  text-align: center;
+}
+
+.checkout-header {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout-header h2 {
+  margin-top: 3rem;
+  font-size: 2.6rem;
+}
+
+.total-container {
+  margin-top: 2.4rem;
+  font-size: 2rem;
+}
+
+h3 {
+  text-align: center;
+}
+
+.totalprice {
+  margin-left: 0.5rem;
+}
+
+.product-price-nr {
+  display: flex;
+  gap: 1rem;
+}
+
+.thanks {
+  padding: 6rem;
+}
+
+.dollar {
+  font-size: 1.4rem;
+}
+
+.totalprice {
+  font-weight: 550;
+}
+
+/* 
+<h4 id="bought-number">1st</h4>
+          <h4 id="price">$20</h4> */
+/*  <div class="total-container">
+          <p>Totalt summan:$<span class="totalprice">0</span></p>
+        </div> */

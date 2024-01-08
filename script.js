@@ -1,6 +1,7 @@
 const url = "https://fakestoreapi.com/products";
 const products = document.getElementById("products");
 const btns = document.querySelectorAll(".btn");
+let productsData;
 
 function getData() {
   fetch(url)
@@ -12,14 +13,14 @@ function getData() {
       editJson(data);
       displayButtons(data);
       console.log(data);
-      let productData = {};
+      productsData = data;
     })
     .catch(console.warn);
 }
 
-function editJson(data, index) {
+function editJson(data) {
   products.innerHTML = data
-    .map(({ image, title, description, price, category }) => {
+    .map(({ image, title, description, price, category }, index) => {
       return `
         <div class="card" data-category="${category}">
           <div class="card-top">
@@ -31,7 +32,7 @@ function editJson(data, index) {
             <div class="card-buy">
               <p><span>$</span> ${price}</p>
               <div class="card-add">
-                <p id="minus">- 0 +</p>
+                <p id="quantity">- 0 +</p>
                 <button class="buy" onclick="buyThis(${index})">Köp!</button>
               </div>
             </div>
@@ -39,7 +40,7 @@ function editJson(data, index) {
         </div>`;
     })
     .join("");
-  makeKopButtonsList(data);
+  // makeKopButtonsList(data);
 }
 
 function displayButtons(data) {
@@ -78,14 +79,68 @@ function handleFilter(e) {
   e.target.classList.add("active");
 }
 
-getData();
+let buyArray = [];
 
-{
-  /* <div class="btn-container">
-<a href="#" class="btn active" data-filter="Shoppa loss">Shoppas loss</a>
-<a href="#" class="btn" data-filter="men's clothing"></a>>Mens clothings</button>
-<a href="#" class="btn" data-filter="jewelery">Jewelery</a>
-<a href="#" class="btn" data-filter="electronics">electronics</a>
-<a href="#" class="btn"data-filter="women's clothing">Womens clothing</a>
-</div> */
+function buyThis(index) {
+  const selectedProduct = productsData[index];
+  buyArray.push(selectedProduct);
+  localStorage.setItem("order", JSON.stringify(buyArray));
+  displayOrders();
+  calcTotalOrder();
+  console.log(selectedProduct);
 }
+
+let ordersContainer = document.querySelector(".price-container");
+
+function displayOrders() {
+  ordersContainer.innerHTML = buyArray
+    .map(({ image, title, price }) => {
+      return `
+        <div class="products-cart">
+          <h3 id="bought-title">${title}</h3>
+          <img class="" src="${image}" alt="${title}" width="100px" />
+          <div class="product-price-nr">
+          <h4 id="bought-number">1st</h4>
+          <h4 id="price">${price} $</h4>
+          </div>
+        </div>`;
+    })
+    .join("");
+}
+const totalPrice = document.querySelector(".totalprice");
+
+function calcTotalOrder() {
+  const total = buyArray
+    .map(({ price }) => price)
+    .reduce((acc, prod) => acc + prod, 0);
+
+  if (+totalPrice.innerHTML === 0) {
+    totalPrice.innerHTML = `${total.toFixed(2)}`;
+  } else {
+    const existingTotal = +totalPrice.innerHTML.slice(2);
+    const newTotal = existingTotal + total;
+    totalPrice.innerHTML = `${newTotal.toFixed(2)}`;
+  }
+}
+
+calcTotalOrder();
+document.addEventListener("DOMContentLoaded", () => {
+  let storedOrder = localStorage.getItem("order");
+  if (storedOrder) {
+    buyArray = JSON.parse(storedOrder);
+    displayOrders();
+    calcTotalOrder();
+  }
+});
+
+// Checkout
+
+const payNow = document.querySelector("#payNow");
+const payPressed = document.querySelector(".section-price");
+
+payNow.addEventListener("click", function (e) {
+  e.preventDefault();
+  payPressed.innerHTML = `<h2 class="thanks">Tack för din order!</h2>`;
+});
+
+getData();
