@@ -1,4 +1,4 @@
-const varukorg = [];
+/* const varukorg = [];
 async function makeKopButtonsList(data) {
     const kopButtons = document.querySelectorAll('.kop');
     
@@ -28,4 +28,4 @@ document.addEventListener('click', () => {
     const varukorgButton = document.querySelector('#checkout');
     const asideVarukorg = document.querySelector('#asideVarukorg')
     asideVarukorg.style.display = "flex";
-})
+}) */

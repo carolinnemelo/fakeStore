@@ -87,7 +87,8 @@ nav {
 
 .card-buy p {
   display: flex;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
   align-items: center;
   margin-right: 10px;
 }
@@ -119,6 +120,7 @@ nav {
 .card-buy p span {
   font-weight: 600;
   margin-right: 0.5rem;
+  margin-left: 0.5rem;
   font-size: 1.2rem;
 }
 

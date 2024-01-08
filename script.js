@@ -32,7 +32,7 @@ function editJson(data) {
             <div class="card-buy">
               <p><span>$</span> ${price}</p>
               <div class="card-add">
-                <p id="quantity">- 0 +</p>
+                <p id="quantity"> - <span class="numplus">0</span> +</p>
                 <button class="buy" onclick="buyThis(${index})">Köp!</button>
               </div>
             </div>
@@ -82,6 +82,12 @@ function handleFilter(e) {
 let buyArray = [];
 
 function buyThis(index) {
+  // Fake lägger till en vid klick "köo"
+  const cardTitle = event.target.closest(".card-top").querySelector(".numplus");
+  if (cardTitle) {
+    cardTitle.textContent = "1";
+  }
+  //sparar i lokal storage
   const selectedProduct = productsData[index];
   buyArray.push(selectedProduct);
   localStorage.setItem("order", JSON.stringify(buyArray));
@@ -90,9 +96,8 @@ function buyThis(index) {
   console.log(selectedProduct);
 }
 
-let ordersContainer = document.querySelector(".price-container");
-
 function displayOrders() {
+  let ordersContainer = document.querySelector(".price-container");
   ordersContainer.innerHTML = buyArray
     .map(({ image, title, price }) => {
       return `
