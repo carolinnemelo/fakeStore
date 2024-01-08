@@ -20,25 +20,20 @@ function editJson(data) {
   products.innerHTML = data
     .map(({ image, title, description, price, category }) => {
       return `
-        <div class="card" data-category="${category}">
-        <div class="card-top">
-          <div class="cards">
-            <img class="card-img" src="${image}" alt="" />
-            <h2 class="card-title">${title}</h2>
-            <p>${description}</p>
-            </div>
-            <div class="card-buy">
-             <p> <span>$</span> ${price}</p>
-              <div class="card-add>
-                <p id="minus">- 0 +</p>
-                 
-              </div>
-            
-            </div>
-          </div>
-        </div>`;
+    <div class="card">
+    <div class="cards">
+      <img class="card-img" src="${image}" alt="" />
+      <h2 class="card-title">${title}"</h2>
+      <p>${description}</p>
+      <div class="card-buy">
+      <p>${price}<span>Kr</span></p>
+      <button class="kop">köp</button>
+      </div>
+    </div></div>`;
     })
     .join("");
+    makeKopButtonsList();
+
 }
 
 function displayButtons(data) {
