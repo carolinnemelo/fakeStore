@@ -197,14 +197,14 @@ p {
 
 .products-cart {
   width: 12rem;
-  height: 14rem;
+  height: 18.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border: 2px solid black;
   border-radius: 3px;
-  padding: 0.5rem;
+  padding: 0.3rem;
   cursor: pointer;
 }
 
@@ -247,6 +247,7 @@ h3 {
 .product-price-nr {
   display: flex;
   gap: 1rem;
+  align-items: flex-end;
 }
 
 .thanks {
@@ -259,6 +260,14 @@ h3 {
 
 .totalprice {
   font-weight: 550;
+}
+
+#bought-number {
+  font-weight: 500;
+}
+
+#price {
+  font-size: 1.3rem;
 }
 
 /* 
