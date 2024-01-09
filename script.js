@@ -1,7 +1,12 @@
 const url = "https://fakestoreapi.com/products";
 const products = document.getElementById("products");
 const btns = document.querySelectorAll(".btn");
+const totalPrice = document.querySelector(".totalprice");
+const payNow = document.querySelector("#payNow");
+const payPressed = document.querySelector(".section-price");
+
 let productsData;
+let buyArray = [];
 
 function getData() {
   fetch(url)
@@ -79,8 +84,6 @@ function handleFilter(e) {
   e.target.classList.add("active");
 }
 
-let buyArray = [];
-
 function buyThis(index) {
   // Fake lägger till en vid klick "köo"
   const cardTitle = event.target.closest(".card-top").querySelector(".numplus");
@@ -112,7 +115,6 @@ function displayOrders() {
     })
     .join("");
 }
-const totalPrice = document.querySelector(".totalprice");
 
 function calcTotalOrder() {
   const total = buyArray
@@ -128,7 +130,6 @@ function calcTotalOrder() {
   }
 }
 
-calcTotalOrder();
 document.addEventListener("DOMContentLoaded", () => {
   let storedOrder = localStorage.getItem("order");
   if (storedOrder) {
@@ -138,14 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Checkout
-
-const payNow = document.querySelector("#payNow");
-const payPressed = document.querySelector(".section-price");
-
 payNow.addEventListener("click", function (e) {
   e.preventDefault();
   payPressed.innerHTML = `<h2 class="thanks">Tack för din order!</h2>`;
 });
 
 getData();
+calcTotalOrder();
